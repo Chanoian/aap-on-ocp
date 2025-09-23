@@ -1,0 +1,9 @@
+apiVersion: ansible.ansible.com/v1alpha1
+kind: JobTemplate
+metadata:
+  name: hello-job
+  namespace: aap
+spec:
+  playbook: "hello.yml"
+  inventory: "localhost"    # For testing, use local inventory
+  credential: "dummy"      # Create a minimal credential in AAP UI or via resource operator

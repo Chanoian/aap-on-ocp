@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aap-team-a
+  namespace: openshift-gitops
+spec:
+  project: aap-teams
+  source:
+    repoURL: 'git@github.com:Chanoian/aap-on-ocp.git'
+    path: resources
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: team-a
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
