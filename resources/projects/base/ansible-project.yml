@@ -7,3 +7,4 @@ spec:
   name: demo-project          
   organization: Default 
   scm_type: git               # git, manual, etc.
+  connection_secret: controller-access
