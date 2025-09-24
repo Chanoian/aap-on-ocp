@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - operatorgroup.yml
   - subscription.yml
+  - ansible-automation-platform.yml
