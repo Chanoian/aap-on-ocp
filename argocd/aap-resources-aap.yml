@@ -26,7 +26,7 @@ spec:
   project: team-a
   source:
     repoURL: 'https://github.com/Chanoian/aap-on-ocp.git'
-    path: resources/
+    path: resources/base
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc
