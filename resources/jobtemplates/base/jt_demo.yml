@@ -2,7 +2,7 @@ kind: JobTemplate
 apiVersion: tower.ansible.com/v1alpha1
 metadata:
   name: hello-job
-  namespace: aap
+  namespace: team-a
 spec:
   playbook: "hello.yml"
   inventory: "localhost"    # For testing, use local inventory
