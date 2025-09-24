@@ -22,6 +22,10 @@ kind: Application
 metadata:
   name: team-a
   namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+
 spec:
   project: team-a
   source:
@@ -35,4 +39,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
-
+  syncOptions:
+  - SkipDryRunOnMissingResource=true
+  - ApplyOutOfSyncOnly=true
