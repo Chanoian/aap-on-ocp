@@ -1,5 +1,5 @@
-apiVersion: ansible.ansible.com/v1alpha1
 kind: JobTemplate
+apiVersion: tower.ansible.com/v1alpha1
 metadata:
   name: hello-job
   namespace: aap
