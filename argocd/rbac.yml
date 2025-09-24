@@ -1,0 +1,21 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: aap-crd-manager
+rules:
+  - apiGroups: ["tower.ansible.com"]
+    resources: ["ansiblejobs", "jobtemplates", "credentials", "inventories", "projects"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: aap-crd-manager-binding
+subjects:
+  - kind: ServiceAccount
+    name: openshift-gitops-argocd-application-controller
+    namespace: openshift-gitops
+roleRef:
+  kind: ClusterRole
+  name: aap-crd-manager
+  apiGroup: rbac.authorization.k8s.io

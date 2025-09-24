@@ -4,4 +4,4 @@ metadata:
   name: demo-job-1 
 spec:
   connection_secret: controller-access
-  job_template_name: Demo Job Template
+  job_template_name: hello-job
