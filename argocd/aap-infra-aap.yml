@@ -1,0 +1,38 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: aap-operator
+  namespace: openshift-gitops
+spec:
+  description: Team A project
+  sourceRepos:
+    - https://github.com/Chanoian/aap-on-ocp.git  # allow your repo
+  destinations:
+    - namespace: openshift-gitops
+      server: https://kubernetes.default.svc     # allow apps in this namespace/cluster
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aap-operator
+  namespace: openshift-gitops
+spec:
+  project: aap-operator
+  source:
+    repoURL: 'https://github.com/Chanoian/aap-on-ocp.git'
+    path: infra/operators/aap
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openshift-gitops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
