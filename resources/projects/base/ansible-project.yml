@@ -2,7 +2,7 @@ apiVersion: tower.ansible.com/v1alpha1
 kind: AnsibleProject
 metadata:
   name: demo-project          # required
-  namespace: team-a              # the namespace where the project will live
+  namespace: aap
 spec:
   name: demo-project          
   organization: Default 
