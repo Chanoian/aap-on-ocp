@@ -4,7 +4,7 @@ metadata:
   name: aap-crd-manager
 rules:
   - apiGroups: ["tower.ansible.com"]
-    resources: ["ansiblejobs", "jobtemplates", "ansiblecredentials", "inventories", "ansibleprojects"]
+    resources: ["ansiblejobs", "jobtemplates", "ansiblecredentials", "inventories", "ansibleprojects", "ansibleinstancegroups"]
     verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
   - apiGroups: ["aap.ansible.com"]
     resources: ["ansibleautomationplatforms"]

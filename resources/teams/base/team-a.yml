@@ -3,4 +3,5 @@ kind: AnsibleInstanceGroup
 metadata:
   name: team-a
   namespace: team-a
+spec:
   connection_secret: controller-access
