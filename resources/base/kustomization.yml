@@ -5,3 +5,4 @@ resources:
   - ../credentials/base
   - ../jobs/base
   - ../jobtemplates/base
+  - ../projects/base
