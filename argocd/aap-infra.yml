@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: aap
+  name: aap-operator
   namespace: openshift-gitops
 spec:
   description: Team A project
@@ -20,10 +20,10 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: aap
+  name: aap-operator
   namespace: openshift-gitops
 spec:
-  project: aap
+  project: aap-operator
   source:
     repoURL: 'https://github.com/Chanoian/aap-on-ocp.git'
     path: infra/operators/aap

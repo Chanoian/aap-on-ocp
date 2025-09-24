@@ -1,0 +1,6 @@
+apiVersion: tower.ansible.com/v1alpha1
+kind: AnsibleInstanceGroup
+metadata:
+  name: team-a
+  namespace: team-a
+  connection_secret: controller-access
