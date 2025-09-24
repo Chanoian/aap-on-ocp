@@ -1,9 +1,0 @@
-kind: JobTemplate
-apiVersion: tower.ansible.com/v1alpha1
-metadata:
-  name: demo-job-template
-  namespace: team-a
-spec:
-  playbook: "hello.yml"
-  inventory: "localhost"    # For testing, use local inventory
-  credential: "dummy"      # Create a minimal credential in AAP UI or via resource operator

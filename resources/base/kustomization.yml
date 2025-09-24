@@ -6,4 +6,4 @@ resources:
   - ../jobs/base
   - ../jobtemplates/base
   - ../projects/base
-  - ../teams/base
+  - ../instance-groups/base

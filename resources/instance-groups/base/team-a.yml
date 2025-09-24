@@ -5,3 +5,4 @@ metadata:
   namespace: team-a
 spec:
   connection_secret: controller-access
+  name: team-a
