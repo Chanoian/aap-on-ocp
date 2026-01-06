@@ -1,0 +1,32 @@
+apiVersion: aap.ansible.com/v1alpha1
+kind: AnsibleAutomationPlatform
+metadata:
+  name: aap
+  namespace: aap
+spec:
+  api:
+    replicas: 2
+  database:
+    postgres_storage_class: gp3-csi
+  controller:
+    disabled: false
+    storage_type: file
+    file_storage_size: 10Gi
+    file_storage_access_mode: ReadWriteOnce
+    file_storage_storage_class: gp3-csi
+  eda:
+    disabled: false
+    file_storage_size: 10Gi
+    file_storage_storage_class: gp3-csi
+  hub:
+    disabled: false
+    file_storage_storage_class: efs-rwx
+    gunicorn_api_workers: 1
+    gunicorn_content_workers: 1
+  image_pull_policy: IfNotPresent
+  lightspeed:
+    disabled: false
+  no_log: true
+  redis_mode: standalone
+  route_tls_termination_mechanism: Edge
+# bundle_cacert_secret: ldap-custom-certs # This can be used for ldap
